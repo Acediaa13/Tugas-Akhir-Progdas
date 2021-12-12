@@ -31,6 +31,9 @@ int main()
             break;
         case ADDUSER:
             databaseUser.addUser();
+            databaseMobil.showAvMobil();
+            databaseMobil.changeStatusMobil();
+            databaseMobil.showAvMobil();
             break;
         case CHANGE:
             databaseMobil.showAllMobil();
@@ -46,16 +49,10 @@ int main()
             break;
         }
 
-        cout << "Lanjutkan? (y/n): ";
+        cout <<"-enter any key to continue-";
         cin >> is_continue;
-
-        if(is_continue == 'y'){
-            option = getOption();
-        }else if(is_continue == 'n'){
-            break;
-        }
+        option = getOption();
     }
 
     return 0;
 }
-
