@@ -55,7 +55,6 @@ class Dbase{
             Dbase::fileName = fileName;
         }
 
-
         void saveMobil(Mobil data){
         Dbase::out.open(Dbase::fileName, ios::app);
         Dbase::out << data.stringify();
@@ -82,6 +81,26 @@ class Dbase{
                 cout << nomor << " " << status << " " << jenis << " " << harga << " "<< plat << endl;
             }
 
+            Dbase::in.close();
+        }
+
+        void showAvMobil(){
+            Dbase::in.open(Dbase::fileName, ios::in);
+            string nomor;
+            string jenis, harga, plat, status;
+
+            cout<<"\n Mobil Tersedia: "<<endl;
+
+            while(!Dbase::in.eof()){
+                Dbase::in >> nomor;
+                Dbase::in >> status;
+                Dbase::in >> jenis;
+                Dbase::in >> harga;
+                Dbase::in >> plat;
+                if(status=="A"){
+                cout << nomor << " " << status << " " << jenis << " " << harga << " "<< plat << endl;     
+                }
+            }
             Dbase::in.close();
         }
 
@@ -206,7 +225,7 @@ class Dbase{
         }
         }
 
-
 };
 
 #endif // DATABASE_FUNCTION_H_INCLUDED
+
