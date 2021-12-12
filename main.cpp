@@ -2,6 +2,7 @@
 #include <fstream>
 #include <string>
 #include <limits>
+#include <conio.h>
 #include"DBase.h"
 #include"Menu.h"
 
@@ -50,7 +51,7 @@ int main()
         }
 
         cout <<"-enter any key to continue-";
-        cin >> is_continue;
+        is_continue = getch();
         option = getOption();
     }
 
